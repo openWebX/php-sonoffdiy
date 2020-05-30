@@ -58,6 +58,13 @@ class phpSonoffDiyDevice {
     }
 
     /**
+     * @return array
+     */
+    public function getData() : array {
+        return $this->data;
+    }
+
+    /**
      * @return $this
      * @throws ConnectionErrorException
      */
@@ -120,14 +127,14 @@ class phpSonoffDiyDevice {
     private function getInfo() {
         $payload = '{"deviceid":"","data":{}}';
         if ($response = $this->getPostResponse(self::API_INFO, $payload)) {
-            $this->getData($response);
+            $this->setData($response);
         }
     }
 
     /**
      * @param Response $response
      */
-    private function getData(Response $response) {
+    private function setData(Response $response) {
         foreach($response->body->data as $key => $val) {
             $this->data[$key] = $val;
         }
