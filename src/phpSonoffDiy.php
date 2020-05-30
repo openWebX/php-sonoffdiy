@@ -23,7 +23,7 @@ class phpSonoffDiy {
      */
     public function __construct(string ...$devices) {
         foreach ($devices as $device) {
-            $this->devices[] = new phpSonoffDiyDevice($device);
+            $this->devices[$device] = new phpSonoffDiyDevice($device);
         }
     }
 
