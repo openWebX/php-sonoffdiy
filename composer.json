@@ -1,0 +1,24 @@
+{
+  "name": "openwebx/php-sonoffdiy",
+  "description": "php based access the newly introduced rest api in sonoff diy enabled devices",
+  "keywords": ["php", "sonoff", "rest", "diy"],
+  "license": "GPL-3.0-or-later",
+  "authors": [
+    {
+      "name": "Jens Reinemuth",
+      "email": "jens@reinemuth.rocks"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "phpSonoffDiy\\": "src/"
+    }
+  },
+  "require": {
+    "php": ">=7.4.0",
+    "ext-json": "*",
+    "nategood/httpful": "^0.3.2"
+  },
+  "require-dev": {
+  }
+}
